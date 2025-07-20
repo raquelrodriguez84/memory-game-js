@@ -1,29 +1,58 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
-body{
+
+body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #f4f4f4; /* Opcional, fondo suave */
 }
-#game-board{
+
+h1 {
+    text-align: center;
+    color: blue;
+    margin-top: 30px;
+}
+
+#game-board {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    width: 1000px;
-    margin-top: 150px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 150px auto 0 auto; /* Centrado horizontalmente */
+    gap: 10px; /* Espacio entre cartas */
 }
-.memoryCard{
+
+.memoryCard {
     width: 200px;
     height: 200px;
-    border: 2px rgb(131, 107, 72);
-    margin: 10px;
+    border: 2px solid rgb(131, 107, 72);
     border-radius: 15px;
     background-color: chocolate;
     cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s; /* Suaviza el volteo */
 }
-h1{
-    text-align: center;
-    color:blue;
+
+.memoryCard:hover {
+    transform: scale(1.05); /* Efecto al pasar el ratón */
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+    #game-board {
+        margin-top: 50px;
+    }
+
+    .memoryCard {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
 }
